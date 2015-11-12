@@ -84,7 +84,7 @@ module Recaptcha
 
       html = ""
       html << %{<script src="#{uri}" async defer></script>\n}
-      html << %{<div class="g-recaptcha" data-sitekey="#{public_key}" data-stoken="#{encoded_stoken}" #{v2_options}></div>\n}
+      html << %{<div id="g-recaptcha" class="g-recaptcha" data-sitekey="#{public_key}" data-stoken="#{encoded_stoken}" #{v2_options}></div>\n}
     
       unless options[:noscript] == false
         fallback_uri = "#{uri.chomp('.js')}/fallback?k=#{public_key}"
